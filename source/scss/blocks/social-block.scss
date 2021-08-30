@@ -1,10 +1,12 @@
 .social-block {
   position: relative;
+  pointer-events: auto;
 
   &:hover {
-    .social-block__list {
+    .social-block__link {
       opacity: 1;
       pointer-events: auto;
+      transform: translateY(5px);
     }
   }
 }
@@ -62,10 +64,18 @@
       border-color: $c-purple;
     }
 
-    & + .social-block__list {
+    &+.social-block__list {
       opacity: 1;
       pointer-events: auto;
     }
+  }
+
+  .active {
+    opacity: 1;
+  }
+
+  .disactive {
+    opacity: 0;
   }
 
   &:active,
@@ -100,7 +110,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 0;
-    opacity: 1;
+    opacity: 0;
     pointer-events: auto;
   }
 
@@ -110,7 +120,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 0;
-    opacity: 1;
+    opacity: 0;
     pointer-events: auto;
   }
 
@@ -131,6 +141,7 @@
     opacity: 1;
     pointer-events: auto;
   }
+
 
   &:focus-within {
     opacity: 1;
@@ -166,8 +177,10 @@
   width: 4rem;
   height: 4rem;
   color: $c-light;
+  opacity: 0;
   border: 2px solid transparent;
   border-radius: 50%;
+
 
   @media (min-width: $stop-scaling) {
     width: 40px;
@@ -207,6 +220,12 @@
   }
 
   &--fb {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(.57, .03, .3, 3.73);
+    transition-delay: 0.1s;
+
     svg {
       width: 0.8rem;
       height: 1.7rem;
@@ -219,6 +238,12 @@
   }
 
   &--insta {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(.57, .03, .3, 3.73);
+    transition-delay: 0.2s;
+
     svg {
       width: 1.5rem;
       height: 1.5rem;
@@ -231,6 +256,12 @@
   }
 
   &--vk {
+    opacity: 0;
+    transition-property: opacity, transform;
+    transition-duration: 0.3s;
+    transition-timing-function: cubic-bezier(.57, .03, .3, 3.73);
+    transition-delay: 0.3s;
+
     svg {
       width: 1.7rem;
       height: 1rem;
