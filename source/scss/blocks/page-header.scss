@@ -111,6 +111,7 @@
   }
 
   .page-header--menu-opened & {
+
     &::before,
     &::after {
       top: 50%;
@@ -245,12 +246,15 @@
     &::after {
       content: "";
       position: absolute;
-      bottom: 0;
-      width: 100%;
+      bottom: 0px;
       height: 2px;
       background-color: $c-light;
-      display: none;
-      left: 0;
+      width: 0px;
+      transition-property: width;
+      transition-duration: 0.3s;
+      transition-timing-function: ease;
+      right: 0px;
+
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -268,7 +272,14 @@
     &.active {
       &::after {
         display: block;
+        width: 100%;
       }
+    }
+
+    &:hover::after {
+      width: 100%;
+      right: auto;
+      left: 0;
     }
 
     &:hover,

@@ -115,25 +115,36 @@
 
   p {
     margin: 0;
+    margin-bottom: 0px;
+    opacity: 1;
+    animation: fadein 0.5s ease-in;
   }
 
-  svg {
-    @media (min-width: $stop-scaling) {
-      width: 16px;
-      height: 16px;
-    }
-
-    @media (max-width: $tablet) and (orientation: portrait) {
-      width: 1.1rem;
-      height: 1.1rem;
-    }
-
-    @media (max-width: $mobile) and (orientation: landscape) {
-      width: 1.1rem;
-      height: 1.1rem;
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+      margin-bottom: -20px;
     }
   }
 }
+
+svg {
+  @media (min-width: $stop-scaling) {
+    width: 16px;
+    height: 16px;
+  }
+
+  @media (max-width: $tablet) and (orientation: portrait) {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  @media (max-width: $mobile) and (orientation: landscape) {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+}
+
 
 .intro__label {
   margin: 0 0 1.6rem;

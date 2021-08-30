@@ -65,6 +65,19 @@
   }
 }
 
+.swiper-slide-active,
+.swiper-slide-next {
+  opacity: 1;
+  animation: flightText 1s ease;
+}
+
+@keyframes flightText {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+
 .slider__item-title {
   margin: 0 0 0 -5.5rem;
   text-transform: uppercase;
@@ -96,6 +109,9 @@
   max-width: 34rem;
   font-size: 1.8rem;
   line-height: 2rem;
+  opacity: 1;
+  animation: flightText 0.5s ease;
+
 
   @media (min-width: $stop-scaling) {
     margin-top: 36px;
@@ -124,6 +140,14 @@
     line-height: 1.5rem;
   }
 }
+
+@keyframes flightText {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+}
+
 
 .slider__controls {
   position: absolute;
