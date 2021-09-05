@@ -18,6 +18,8 @@
   color: $c-dark;
   border-radius: 50%;
 
+  animation: socBlToggle 1s ease;
+
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
   }
@@ -62,7 +64,7 @@
       border-color: $c-purple;
     }
 
-    & + .social-block__list {
+    &+.social-block__list {
       opacity: 1;
       pointer-events: auto;
     }
@@ -78,6 +80,14 @@
       background-color: $c-purple;
       border-color: $c-purple;
     }
+  }
+}
+
+@keyframes socBlToggle {
+  0% {
+    width: 0px;
+    height: 0px;
+    margin-right: 4.8rem;
   }
 }
 

@@ -36,6 +36,10 @@
   width: 10rem;
   color: $c-light;
 
+  opacity: 1;
+  left: 0px;
+  animation: logo 0.5s ease;
+
   @media (min-width: $stop-scaling) {
     top: -5px;
     padding: 10px 0;
@@ -71,6 +75,13 @@
   }
 }
 
+@keyframes logo {
+  0% {
+    opacity: 0;
+    left: -20px;
+  }
+}
+
 .page-header__toggler {
   @include btn-reset;
   position: relative;
@@ -81,6 +92,8 @@
   background-color: $c-light;
   border-radius: 50%;
   z-index: 1;
+
+
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: block;
@@ -111,6 +124,7 @@
   }
 
   .page-header--menu-opened & {
+
     &::before,
     &::after {
       top: 50%;
@@ -177,6 +191,9 @@
   font-size: 1.2rem;
   line-height: 1.0418;
   color: $c-light;
+
+  opacity: 1;
+  animation: menu 1s ease;
 
   @media (min-width: $stop-scaling) {
     font-size: 12px;
@@ -281,6 +298,12 @@
         background-color: $c-purple;
       }
     }
+  }
+}
+
+@keyframes menu {
+  0% {
+    opacity: 0;
   }
 }
 

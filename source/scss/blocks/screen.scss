@@ -30,6 +30,8 @@
   z-index: 1;
 }
 
+
+
 .screen__disclaimer {
   position: absolute;
   bottom: 0;
@@ -46,6 +48,8 @@
   color: $c-dark;
   background-color: $c-light;
   z-index: 1;
+
+  animation: footer 1s ease;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;
@@ -70,7 +74,14 @@
   }
 }
 
+@keyframes footer {
+  0% {
+    bottom: -40px;
+  }
+}
+
 .screen__footer-wrapper {
+
   @include container;
 
   @media (max-width: $tablet) and (orientation: portrait) {
@@ -89,6 +100,8 @@
     }
   }
 }
+
+
 
 .screen__footer-enlarge {
   @include btn-reset;
