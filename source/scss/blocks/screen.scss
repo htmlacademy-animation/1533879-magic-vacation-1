@@ -10,12 +10,27 @@
     display: none;
   }
 
+
   @media (max-width: $tablet) and (orientation: portrait) {
     min-height: calc(var(--vh, 1vh) * 100);
   }
 
   @media (max-width: $tablet - 1) and (orientation: landscape) {
     height: 100vh;
+  }
+}
+
+.active {
+  .intro__message {
+    p {
+      opacity: 1;
+      margin-bottom: 0px;
+    }
+  }
+
+  .form__field {
+    padding: 0 5.6rem;
+    width: calc(100% - 21rem);
   }
 }
 
