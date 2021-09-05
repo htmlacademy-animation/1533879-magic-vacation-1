@@ -115,25 +115,32 @@
 
   p {
     margin: 0;
+    margin-bottom: -20px;
+    opacity: 0;
+    transition-property: opacity, margin-bottom;
+    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
   }
 
-  svg {
-    @media (min-width: $stop-scaling) {
-      width: 16px;
-      height: 16px;
-    }
+}
 
-    @media (max-width: $tablet) and (orientation: portrait) {
-      width: 1.1rem;
-      height: 1.1rem;
-    }
+svg {
+  @media (min-width: $stop-scaling) {
+    width: 16px;
+    height: 16px;
+  }
 
-    @media (max-width: $mobile) and (orientation: landscape) {
-      width: 1.1rem;
-      height: 1.1rem;
-    }
+  @media (max-width: $tablet) and (orientation: portrait) {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  @media (max-width: $mobile) and (orientation: landscape) {
+    width: 1.1rem;
+    height: 1.1rem;
   }
 }
+
 
 .intro__label {
   margin: 0 0 1.6rem;
