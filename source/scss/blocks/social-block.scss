@@ -1,15 +1,22 @@
 .social-block {
-  position: relative;
-  pointer-events: auto;
+  // position: absolute;
+  // pointer-events: auto;
 
-  &:hover {
-    .social-block__link {
-      opacity: 1;
-      pointer-events: auto;
-      transform: translateY(5px);
-    }
+  display: flex;
+  position: absolute;
+  pointer-events: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+&:hover {
+  .social-block__link {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(5px);
   }
 }
+
 
 .social-block__toggler {
   @include btn-reset;
@@ -19,8 +26,9 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
-
-  animation: socBlToggle 1s ease;
+  transition-property: width, height;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -93,13 +101,11 @@
   }
 }
 
-@keyframes socBlToggle {
-  0% {
-    width: 0px;
-    height: 0px;
-    margin-right: 4.8rem;
-  }
+.socBlToggler_unactive {
+  width: 0px;
+  height: 0px;
 }
+
 
 .social-block__list {
   @include list-reset;

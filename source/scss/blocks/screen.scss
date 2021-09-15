@@ -32,6 +32,10 @@
     padding: 0 5.6rem;
     width: calc(100% - 21rem);
   }
+
+  .screen__footer {
+    bottom: 0px;
+  }
 }
 
 .screen__wrapper {
@@ -57,14 +61,17 @@
 
 .screen__footer {
   position: absolute;
-  bottom: 0;
+  bottom: -40px;
   left: 0;
   right: 0;
   color: $c-dark;
   background-color: $c-light;
   z-index: 1;
+  transition-property: bottom;
+  transition-duration: 0.5s;
+  transition-timing-function: ease;
 
-  animation: footer 1s ease;
+  // animation: footer 1s ease;
 
   @media (max-width: $tablet) and (orientation: portrait) {
     width: 3.5rem;
@@ -89,11 +96,11 @@
   }
 }
 
-@keyframes footer {
-  0% {
-    bottom: -40px;
-  }
-}
+// @keyframes footer {
+//   0% {
+//     bottom: -40px;
+//   }
+// }
 
 .screen__footer-wrapper {
 

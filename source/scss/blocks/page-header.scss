@@ -38,7 +38,9 @@
 
   opacity: 1;
   left: 0px;
-  animation: logo 0.5s ease;
+  transition-property: opacity, left;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.5, 0.85, 0.45, 1.01);
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -75,12 +77,11 @@
   }
 }
 
-@keyframes logo {
-  0% {
-    opacity: 0;
-    left: -20px;
-  }
+.logo_unactive {
+  opacity: 0;
+  left: -20px;
 }
+
 
 .page-header__toggler {
   @include btn-reset;
@@ -142,6 +143,7 @@
 }
 
 .page-header__nav {
+  position: relative;
   display: flex;
   align-items: center;
 
@@ -187,13 +189,16 @@
 .page-header__menu {
   font-family: $font-alt;
   text-transform: uppercase;
+  // margin-right: 7.8rem;
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 1.0418;
   color: $c-light;
 
   opacity: 1;
-  animation: menu 1s ease;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.5, 0.85, 0.45, 1.01);
 
   @media (min-width: $stop-scaling) {
     font-size: 12px;
@@ -311,13 +316,15 @@
   }
 }
 
-@keyframes menu {
-  0% {
-    opacity: 0;
-  }
+.menu_unactive {
+  opacity: 0;
 }
 
 .page-header__social {
+  width: 4rem;
+  height: 4rem;
+  position: relative;
+  margin-left: 4.8rem;
   margin-left: 4.8rem;
 
   @media (min-width: $stop-scaling) {
