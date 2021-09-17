@@ -35,7 +35,6 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
-
   opacity: 1;
   left: 0px;
   transition-property: opacity, left;
@@ -79,7 +78,7 @@
 
 .logo_unactive {
   opacity: 0;
-  left: -20px;
+  left: -2rem;
 }
 
 
@@ -189,12 +188,10 @@
 .page-header__menu {
   font-family: $font-alt;
   text-transform: uppercase;
-  // margin-right: 7.8rem;
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 1.0418;
   color: $c-light;
-
   opacity: 1;
   transition-property: opacity;
   transition-duration: 0.5s;
@@ -269,13 +266,12 @@
       position: absolute;
       bottom: 0px;
       height: 2px;
-      background-color: $c-light;
       width: 0px;
+      background-color: $c-light;
       transition-property: width;
-      transition-duration: 0.3s;
+      transition-duration: 0.5s;
       transition-timing-function: ease;
-      right: 0px;
-
+      right: 0;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -294,13 +290,14 @@
       &::after {
         display: block;
         width: 100%;
+        left: 0;
       }
     }
 
     &:hover::after {
       width: 100%;
-      right: auto;
       left: 0;
+      right: auto;
     }
 
     &:hover,
@@ -321,6 +318,9 @@
 }
 
 .page-header__social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 4rem;
   height: 4rem;
   position: relative;

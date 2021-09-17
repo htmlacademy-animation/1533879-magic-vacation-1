@@ -7,16 +7,16 @@
   pointer-events: auto;
   align-items: center;
   justify-content: center;
-}
 
-&:hover {
-  .social-block__link {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(5px);
+  &:hover {
+    .social-block__link {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(5px);
+    }
   }
-}
 
+}
 
 .social-block__toggler {
   @include btn-reset;
@@ -28,7 +28,7 @@
   border-radius: 50%;
   transition-property: width, height;
   transition-duration: 0.5s;
-  transition-timing-function: ease-in;
+  transition-timing-function: cubic-bezier(0.65, 1.64, 0.7, 1.38);
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -101,7 +101,7 @@
   }
 }
 
-.socBlToggler_unactive {
+.social-block__toggler--unactive {
   width: 0px;
   height: 0px;
 }
