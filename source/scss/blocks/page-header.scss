@@ -35,6 +35,11 @@
   padding: 1rem 0;
   width: 10rem;
   color: $c-light;
+  opacity: 1;
+  left: 0px;
+  transition-property: opacity, left;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.5, 0.85, 0.45, 1.01);
 
   @media (min-width: $stop-scaling) {
     top: -5px;
@@ -71,6 +76,12 @@
   }
 }
 
+.logo_unactive {
+  opacity: 0;
+  left: -2rem;
+}
+
+
 .page-header__toggler {
   @include btn-reset;
   position: relative;
@@ -81,6 +92,8 @@
   background-color: $c-light;
   border-radius: 50%;
   z-index: 1;
+
+
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: block;
@@ -129,6 +142,7 @@
 }
 
 .page-header__nav {
+  position: relative;
   display: flex;
   align-items: center;
 
@@ -178,6 +192,10 @@
   font-size: 1.2rem;
   line-height: 1.0418;
   color: $c-light;
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.5, 0.85, 0.45, 1.01);
 
   @media (min-width: $stop-scaling) {
     font-size: 12px;
@@ -248,13 +266,12 @@
       position: absolute;
       bottom: 0px;
       height: 2px;
-      background-color: $c-light;
       width: 0px;
+      background-color: $c-light;
       transition-property: width;
-      transition-duration: 0.3s;
+      transition-duration: 0.5s;
       transition-timing-function: ease;
-      right: 0px;
-
+      right: 0;
 
       @media (max-width: $tablet) and (orientation: portrait) {
         left: 0;
@@ -273,13 +290,14 @@
       &::after {
         display: block;
         width: 100%;
+        left: 0;
       }
     }
 
     &:hover::after {
       width: 100%;
-      right: auto;
       left: 0;
+      right: auto;
     }
 
     &:hover,
@@ -295,7 +313,18 @@
   }
 }
 
+.menu_unactive {
+  opacity: 0;
+}
+
 .page-header__social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  position: relative;
+  margin-left: 4.8rem;
   margin-left: 4.8rem;
 
   @media (min-width: $stop-scaling) {

@@ -1,6 +1,12 @@
 .social-block {
-  position: relative;
+  // position: absolute;
+  // pointer-events: auto;
+
+  display: flex;
+  position: absolute;
   pointer-events: auto;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     .social-block__link {
@@ -9,6 +15,7 @@
       transform: translateY(5px);
     }
   }
+
 }
 
 .social-block__toggler {
@@ -19,6 +26,9 @@
   height: 4rem;
   color: $c-dark;
   border-radius: 50%;
+  transition-property: width, height;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.65, 1.64, 0.7, 1.38);
 
   @media (max-width: $tablet) and (orientation: portrait) {
     display: none;
@@ -90,6 +100,12 @@
     }
   }
 }
+
+.social-block__toggler--unactive {
+  width: 0px;
+  height: 0px;
+}
+
 
 .social-block__list {
   @include list-reset;

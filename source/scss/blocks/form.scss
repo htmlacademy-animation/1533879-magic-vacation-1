@@ -33,9 +33,9 @@
 .form__field {
   flex: none;
   margin-right: 3rem;
-  padding: 0 5.6rem;
+  padding: 0px;
   height: 6rem;
-  width: calc(100% - 21rem);
+  width: 6rem;
   text-transform: uppercase;
   font: inherit;
   font-size: 2.4rem;
@@ -45,7 +45,10 @@
   border-radius: 3rem;
   outline: none;
 
-  animation: input 1s ease;
+  transition-property: padding, width;
+  transition-duration: 1s;
+  transition-timing-function: ease-in;
+  ;
 
   &:focus {
     border: 1px solid $c-purple;
@@ -81,15 +84,7 @@
   }
 }
 
-@keyframes input {
-  0% {
-    padding: 0px;
-    width: 6rem;
-  }
-}
-
 .form__button {
-  // flex-grow: 1;
   flex-grow: 0;
 
   @media (orientation: portrait) {
