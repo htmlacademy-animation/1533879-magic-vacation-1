@@ -8,7 +8,7 @@
   font-weight: 400;
   font-size: 2.4rem;
   line-height: 3rem;
-  color: $c-dark;
+  color: #5f458c;
   letter-spacing: -0.04em;
 
   @media (min-width: $stop-scaling) {
@@ -28,16 +28,16 @@
     line-height: 2rem;
   }
 
-  &::before {
-    @include center;
-    content: "";
-    width: 100%;
-    height: 100%;
-    background-color: $c-light;
-    border: 2px solid $c-light;
-    border-radius: 3.5rem;
-    z-index: -1;
-  }
+  // &::before {
+  //   @include center;
+  //   content: "";
+  //   width: 100%;
+  //   height: 100%;
+  //   background-color: $c-light;
+  //   border: 2px solid $c-light;
+  //   border-radius: 3.5rem;
+  //   z-index: -1;
+  // }
 
   &:hover {
     color: $c-purple;
@@ -64,5 +64,57 @@
       background-color: $c-purple;
       border-color: $c-purple;
     }
+  }
+}
+
+.game__btn::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: $c-dark;
+  transform: translate(-50%, -50%);
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: $c-light;
+  border: 2px solid $c-light;
+  border-radius: 3.5rem;
+  z-index: -1;
+}
+
+.rules__btn::before {
+  opacity: 1;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  color: white;
+  // transform: translate(-50%, -50%);
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: $c-light;
+  border: 2px solid $c-light;
+  border-radius: 3.5rem;
+  z-index: -1;
+  animation: rules__btn 0.5s ease 2.5s backwards;
+}
+
+.rules__btn p {
+  opacity: 1;
+  animation: rules__btn__p 1s ease 2.7s;
+}
+
+@keyframes rules__btn {
+  from {
+    opacity: 0;
+    right: 0%;
+    width: 35%;
+    z-index: 44;
+  }
+}
+
+@keyframes rules__btn__p {
+  from {
+    opacity: 0;
   }
 }
