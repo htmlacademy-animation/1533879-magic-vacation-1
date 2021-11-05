@@ -15,7 +15,9 @@ export default class FullPageScroll {
   }
 
   init() {
-    document.addEventListener(`wheel`, throttle(this.onScrollHandler, this.THROTTLE_TIMEOUT, {trailing: true}));
+    document.addEventListener(`wheel`, throttle(this.onScrollHandler, this.THROTTLE_TIMEOUT, {
+      trailing: true
+    }));
     window.addEventListener(`popstate`, this.onUrlHashChengedHandler);
 
     this.onUrlHashChanged();
@@ -51,12 +53,30 @@ export default class FullPageScroll {
     this.emitChangeDisplayEvent();
   }
 
+  // changeVisibilityDisplay() {
+  //   this.screenElements.forEach((screen) => {
+  //     screen.classList.add(`screen--hidden`);
+  //     screen.classList.remove(`active`);
+  //   });
+  //   this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+  //   setTimeout(() => {
+  //     this.screenElements[this.activeScreen].classList.add(`active`);
+  //   }, 100);
+  // }
+
   changeVisibilityDisplay() {
     this.screenElements.forEach((screen) => {
-      screen.classList.add(`screen--hidden`);
+
+      setTimeout(() => {
+        screen.classList.add(`screen--hidden`);
+      }, 1000);
       screen.classList.remove(`active`);
     });
-    this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+
+    setTimeout(() => {
+      this.screenElements[this.activeScreen].classList.remove(`screen--hidden`);
+    }, 1000);
+
     setTimeout(() => {
       this.screenElements[this.activeScreen].classList.add(`active`);
     }, 100);
