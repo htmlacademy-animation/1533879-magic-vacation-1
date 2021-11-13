@@ -1121,25 +1121,33 @@ img {
   border: 2px solid #ffffff;
   border-radius: 3.5rem;
   z-index: -1;
-  animation: rules__btn 0.5s ease 2.5s backwards;
+  animation: rules__btn_fadeInRight 0.5s ease 2.5s backwards;
 }
 
 .rules__btn p {
   opacity: 1;
-  animation: rules__btn__p 1s ease 2.7s;
+  animation: rules__text_fadeIn 1s ease 2.7s;
 }
 
-@keyframes rules__btn {
+@keyframes rules__btn_fadeInRight {
   from {
     opacity: 0;
     right: 0%;
     width: 35%;
     z-index: 44;
   }
+  to {
+    opacity: 1;
+    z-index: -1;
+    width: 100%;
+  }
 }
-@keyframes rules__btn__p {
+@keyframes rules__text_fadeIn {
   from {
     opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 .chat {
@@ -3194,7 +3202,7 @@ img {
   margin: 0;
   transform: translateX(0px);
   opacity: 1;
-  animation: rules_p 0.5s ease-in backwards;
+  animation: p_fadeInRight 0.5s ease-in backwards;
 }
 @media (max-width: 1024px) and (orientation: portrait) {
   .rules__item p {
@@ -3206,15 +3214,25 @@ img {
   from {
     width: 0;
     height: 0;
-    top: 2.25rem;
-    left: 2.25rem;
+    transform: translate(2.25rem, 2.25rem);
     font-size: 0;
   }
+  to {
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 2.4rem;
+    top: 0;
+    left: 0;
+  }
 }
-@keyframes rules_p {
+@keyframes p_fadeInRight {
   from {
-    transform: translateX(15px);
+    transform: translateX(2rem);
     opacity: 0;
+  }
+  to {
+    transform: translateX(0rem);
+    opacity: 1;
   }
 }
 .rules__link {
@@ -3285,10 +3303,6 @@ img {
   transition-property: top;
   transition-duration: 1s;
   transition-timing-function: ease;
-}
-
-.purple--hidden {
-  top: 300rem;
 }
 
 .active .intro__message p {
