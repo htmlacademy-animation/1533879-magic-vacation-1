@@ -96,25 +96,35 @@
   border: 2px solid $c-light;
   border-radius: 3.5rem;
   z-index: -1;
-  animation: rules__btn 0.5s ease 2.5s backwards;
+  animation: rules__btn_fadeInRight 0.5s ease 2.5s backwards;
 }
 
 .rules__btn p {
   opacity: 1;
-  animation: rules__btn__p 1s ease 2.7s;
+  animation: rules__text_fadeIn 1s ease 2.7s;
 }
 
-@keyframes rules__btn {
+@keyframes rules__btn_fadeInRight {
   from {
     opacity: 0;
     right: 0%;
     width: 35%;
     z-index: 44;
   }
+
+  to {
+    opacity: 1;
+    z-index: -1;
+    width: 100%;
+  }
 }
 
-@keyframes rules__btn__p {
+@keyframes rules__text_fadeIn {
   from {
     opacity: 0;
+  }
+
+  to {
+    opacity: 1;
   }
 }

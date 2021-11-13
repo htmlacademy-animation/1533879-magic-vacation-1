@@ -208,7 +208,7 @@
     margin: 0;
     transform: translateX(0px);
     opacity: 1;
-    animation: rules_p 0.5s ease-in backwards;
+    animation: p_fadeInRight 0.5s ease-in backwards;
 
     @media (max-width: $tablet) and (orientation: portrait) {
       min-height: calc(1.4rem * 2.2);
@@ -220,16 +220,28 @@
   from {
     width: 0;
     height: 0;
-    top: 2.25rem;
-    left: 2.25rem;
+    transform: translate(2.25rem, 2.25rem);
     font-size: 0;
+  }
+
+  to {
+    width: 4.5rem;
+    height: 4.5rem;
+    font-size: 2.4rem;
+    top: 0;
+    left: 0;
   }
 }
 
-@keyframes rules_p {
+@keyframes p_fadeInRight {
   from {
-    transform: translateX(15px);
+    transform: translateX(2rem);
     opacity: 0;
+  }
+
+  to {
+    transform: translateX(0rem);
+    opacity: 1;
   }
 }
 
